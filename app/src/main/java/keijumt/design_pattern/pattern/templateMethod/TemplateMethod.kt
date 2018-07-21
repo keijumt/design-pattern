@@ -1,11 +1,14 @@
 package keijumt.design_pattern.pattern.templateMethod
 
+import keijumt.design_pattern.entity.Dog
+
 abstract class TemplateMethod {
     fun templateMethod() {
-        method1()
-        method2()
+        val dog = Dog()
+        run(dog)
+        eat(dog)
     }
 
-    protected abstract fun method1()
-    protected abstract fun method2()
+    protected abstract fun run(dog: Dog)
+    protected abstract fun eat(dog: Dog)
 }

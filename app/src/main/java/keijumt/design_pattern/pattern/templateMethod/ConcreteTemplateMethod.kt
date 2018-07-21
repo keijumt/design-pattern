@@ -1,11 +1,13 @@
 package keijumt.design_pattern.pattern.templateMethod
 
+import keijumt.design_pattern.entity.Dog
+
 class ConcreteTemplateMethod : TemplateMethod() {
-    override fun method1() {
-        println("method1")
+    override fun run(dog: Dog) {
+        println("犬が走った")
     }
 
-    override fun method2() {
-        println("method2")
+    override fun eat(dog: Dog) {
+        println("犬が食べた")
     }
 }
