@@ -5,7 +5,7 @@ class BuilderPattern {
     fun main() {
 
         // GofによるBuilderパターン
-        val builder = PersonBuilder()
+        val builder = PojoBuilder()
         val director = Director(builder)
         director.construct()
         val pojo = builder.build()

@@ -2,7 +2,7 @@ package keijumt.design_pattern.pattern.builder
 
 import keijumt.design_pattern.entity.Pojo
 
-class PersonBuilder : Builder {
+class PojoBuilder : Builder {
 
     private val pojo = Pojo()
 
