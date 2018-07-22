@@ -1,4 +1,4 @@
-package keijumt.design_pattern.pattern.builder.gof
+package keijumt.design_pattern.pattern.builder
 
 import keijumt.design_pattern.entity.Pojo
 

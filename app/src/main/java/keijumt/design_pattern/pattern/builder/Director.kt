@@ -1,4 +1,4 @@
-package keijumt.design_pattern.pattern.builder.gof
+package keijumt.design_pattern.pattern.builder
 
 class Director(private val builder: Builder) {
 
