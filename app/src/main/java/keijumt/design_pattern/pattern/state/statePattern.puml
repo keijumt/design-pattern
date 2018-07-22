@@ -1,0 +1,26 @@
+@startuml
+
+interface State{
+    + printState()
+}
+
+class StopState{
+    + printState()
+}
+
+class RunningState{
+    + printState()
+}
+
+class Service{
+    + state:State
+    + setState()
+    + printServiceState()
+}
+
+State <|.. StopState
+State <|.. RunningState
+
+Service o-- State
+
+@enduml
