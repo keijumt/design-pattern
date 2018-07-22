@@ -1,0 +1,34 @@
+@startuml
+
+interface Builder{
+    + obj1(obj1:String)
+    + obj2(obj2:String)
+    + obj3(obj3:String)
+
+    + build():Pojo
+}
+
+class PojoBuilder{
+    + obj1(obj1:String)
+    + obj2(obj2:String)
+    + obj3(obj3:String)
+
+    + build():Pojo
+}
+
+class Pojo{
+    + obj1:String
+    + obj2:String
+    + obj3:String
+}
+
+class Director{
+    - builder:Builder
+    + construct()
+}
+
+Builder <|.. PojoBuilder
+Director o-right- Builder
+PojoBuilder "1" o-- "1" Pojo
+
+@enduml
