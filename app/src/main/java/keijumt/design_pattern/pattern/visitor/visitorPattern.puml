@@ -1,0 +1,24 @@
+@startuml
+
+interface Acceptor{
+    + accept(visitor:Visitor)
+}
+
+abstract class Visitor{
+    + visit(acceptor:Acceptor)
+    + visit(concreteAcceptor:ConcreteAcceptor)
+}
+
+class ConcreteAcceptor{
+    + accept(visitor:Visitor)
+}
+
+class ConcreteVisitor{
+    + visit(acceptor:Acceptor)
+    + visit(concreteAcceptor:ConcreteAcceptor)
+}
+
+Acceptor <|.. ConcreteAcceptor
+Visitor <|-- ConcreteVisitor
+
+@enduml
