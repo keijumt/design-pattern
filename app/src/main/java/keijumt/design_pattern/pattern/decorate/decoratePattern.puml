@@ -1,0 +1,31 @@
+@startuml
+
+interface Component{
+    + getName():String
+}
+
+class ConcreteComponent{
+    + getName():String
+}
+
+abstract class Decorate{
+    - component:Component
+}
+
+class DecorateA{
+    + getName():String
+}
+
+class DecorateB{
+    + getName():String
+}
+
+Component <|.. ConcreteComponent
+Component <|.. Decorate
+Decorate <|-- DecorateA
+Decorate <|-- DecorateB
+
+ConcreteComponent --> DecorateA : 注入
+ConcreteComponent --> DecorateB : 注入
+
+@enduml
