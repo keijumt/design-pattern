@@ -1,0 +1,28 @@
+@startuml
+
+interface GroupEntry{
+    + printName()
+}
+
+class Group{
+    - list:List<GroupEntry>
+    - name:String
+    + printName()
+    + add()
+}
+
+class GroupMember{
+    - name:String
+    + printName()
+}
+
+class Main{
+
+}
+
+GroupEntry <|.. Group
+GroupEntry <|.. GroupMember
+Group o-- GroupEntry
+Main o-- Group
+
+@enduml

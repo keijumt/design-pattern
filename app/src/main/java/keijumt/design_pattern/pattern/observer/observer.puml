@@ -1,0 +1,30 @@
+@startuml
+
+interface Observer{
+    + update()
+}
+
+abstract class Subject{
+    - observers:List<Observer>
+    + addObserver(observer:Observer)
+    + removeObserver(observer:Observer)
+    + notifyObservers()
+}
+
+class ConcreteObserver{
+    + update()
+}
+
+class ConcreteSubject{
+    + addObserver(observer:Observer)
+    + removeObserver(observer:Observer)
+    + notifyObservers()
+}
+
+Subject <|-- ConcreteSubject
+Observer <|.. ConcreteObserver
+Subject "1" o-left- "0..*" Observer
+
+ConcreteSubject -left->  ConcreteObserver : update
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+abstract class TemplateMethod{
+    + templateMethod()←method1,method2を利用したメソッドを記述
+    + {abstract} method1()
+    + {abstract} method2()
+}
+
+class ConcreteTemplateMethod{
+    + method1()
+    + method2()
+}
+
+class Main
+
+TemplateMethod <|-- ConcreteTemplateMethod
+
+Main o-- TemplateMethod
+Main --> TemplateMethod : templateMethod()を利用する
+
+@enduml

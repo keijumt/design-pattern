@@ -1,0 +1,25 @@
+@startuml
+
+interface Product{
+    + method()
+}
+
+abstract Creator{
+    + createProduct(): Product
+    + create() = createProduct()
+}
+
+class ConcreteProduct{
+    + method()
+}
+
+class ConcreteCreator{
+    + createProduct() = ConcreteProduct()
+}
+
+Product <|.. ConcreteProduct
+Creator <|.. ConcreteCreator
+
+ConcreteCreator --> "create" ConcreteProduct
+
+@enduml

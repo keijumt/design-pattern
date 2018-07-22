@@ -1,0 +1,19 @@
+@startuml
+
+abstract class Factory{
+    + getName():String
+}
+
+class ConcreteFactory{
+    + getName():String
+}
+
+class Main{
+    + factory:Factory
+}
+
+Factory <|-- ConcreteFactory
+
+Main o-- ConcreteFactory
+
+@enduml
