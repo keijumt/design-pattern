@@ -1,0 +1,19 @@
+@startuml
+
+class Facade
+class SystemA
+class SystemB
+class SystemC
+class SystemD
+class Main
+
+Facade o-- SystemA
+Facade o-- SystemB
+Facade o-- SystemC
+Facade o-- SystemD
+
+Main --> Facade : 複雑な処理をfacadeで処理
+
+
+
+@enduml
