@@ -1,0 +1,17 @@
+@startuml
+
+interface Prototype{
+    + createClone():Any
+}
+
+class ConcretePrototype{
+    + createClone():ConcretePrototype
+}
+
+class Main
+
+Prototype <|.. ConcretePrototype
+
+Main o-- ConcretePrototype : createCloneでクローンを作成する
+
+@enduml
