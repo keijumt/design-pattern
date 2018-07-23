@@ -1,0 +1,38 @@
+@startuml
+
+abstract class Handler{
+    - handler:Handler
+    + setNext(handler:Handler)
+    + chainStart()
+    + {abstract} method()
+}
+
+note right of Handler
+    次の処理をするhandlerを保持しておく
+    chainStart()でmethod()を呼ぶ
+    method()では処理を行い、次の処理を行う必要が
+    ある場合は、内部で保持しているhandlerの
+    method()を読んでチェインが続いていく
+end note
+
+class ChainA{
+    + method()
+}
+
+class ChainB{
+    + method()
+}
+
+class ChainC{
+    + method()
+}
+
+class Main
+
+Handler <|.. ChainA
+Handler <|.. ChainB
+Handler <|.. ChainC
+
+Main --> Handler : Use
+
+@enduml
