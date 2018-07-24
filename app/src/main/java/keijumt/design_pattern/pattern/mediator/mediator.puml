@@ -1,0 +1,40 @@
+@startuml
+
+abstract class Mediator{
+    - colleagues:HashMap<String,Colleague>
+    + addColleague(colleague:Colleague)
+    + {abstract}answer(colleague:String):Object
+}
+
+interface Colleague{
+    + getTag():String
+    + run()
+}
+
+class ConcreteMediator{
+    + addColleague(colleague:Colleague)
+    + answer(colleague:String):Object
+}
+
+class ConcreteColleague{
+    - tag:String
+    + getTag():String
+    + run()
+}
+
+Mediator <|.. ConcreteMediator
+Colleague <|.. ConcreteColleague
+
+Mediator o-right- Colleague
+ConcreteColleague o-left- ConcreteMediator
+
+ConcreteColleague --> ConcreteMediator
+
+note right of ConcreteColleague
+    run()からanswer()を呼ぶ
+    answer()は保持しているcolleaguesの
+    状況を加味して戻り値を返す
+end note
+
+
+@enduml
