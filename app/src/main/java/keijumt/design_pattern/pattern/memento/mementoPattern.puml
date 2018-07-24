@@ -1,0 +1,22 @@
+@startuml
+
+
+class Memento{
+    - temp:Int
+}
+
+class Originator{
+    - temp:Int
+    + plus():tempを操作するメソッド
+    + setMemento():Mementoからtempの値をセット
+    + createMemento():現在のtempからmementoを作成
+}
+
+class Carataker{
+    + mement:Mement
+}
+
+Carataker o-- Originator
+Carataker "0..*" o-- "1" Memento
+
+@enduml
