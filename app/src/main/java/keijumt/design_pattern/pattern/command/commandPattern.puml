@@ -25,17 +25,18 @@ class Invoker{
 
 class Main
 
-Command <|-- ConcreteCommand
+Command <|-left- ConcreteCommand
 Receiver <|.. ConcreteReceiver
 
 ConcreteCommand o-- Receiver
 Invoker o-- Command
 
-Main o-- Invoker
-Main o-- Receiver
+Main o-left- Receiver
 
 note left of Invoker
     commandを保持
+    commandが複数、多種類ある場合は
+    Invokerからcommandを起動する
 end note
 
 @enduml
