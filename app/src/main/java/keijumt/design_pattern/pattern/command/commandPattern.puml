@@ -1,0 +1,41 @@
+@startuml
+
+abstract class Command{
+    # id:Int
+    # receiver:Receiver
+    + {abstract} execute()
+}
+
+interface Receiver{
+    + {abstract}execute()
+}
+
+class ConcreteCommand{
+    + execute()
+}
+
+class ConcreteReceiver{
+    + action()
+}
+
+class Invoker{
+    - commands:List<Command>
+    + execute()
+}
+
+class Main
+
+Command <|-- ConcreteCommand
+Receiver <|.. ConcreteReceiver
+
+ConcreteCommand o-- Receiver
+Invoker o-- Command
+
+Main o-- Invoker
+Main o-- Receiver
+
+note left of Invoker
+    commandを保持
+end note
+
+@enduml
