@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Implementor{
+    + {abstract} implMethod()
+}
+
+class Abstraction{
+    - impl:Implementor
+    + implMethod()
+}
+
+class ConcreteImplementor{
+    + implMethod()
+}
+
+class RefineAbstraction{
+    + implMethod()
+    + refineMethod()
+}
+
+class Main
+
+Implementor <|-- ConcreteImplementor
+Abstraction <|-- RefineAbstraction
+
+Abstraction o-right- Implementor : 委譲によって継承
+
+Main o-right- RefineAbstraction
+
+note right of RefineAbstraction
+    機能を追加
+end note
+
+
+@enduml
