@@ -1,0 +1,30 @@
+@startuml
+
+interface Iterator{
+    + hasNext():Boolean
+    + next():Any
+}
+
+interface Aggregate{
+    + iterator():Iterator
+}
+
+class ConcreteIterator{
+    + hasNext():Boolean
+    + next():Any
+}
+
+class ConcreteAggregate{
+    + iterator():Iterator
+    + getItem():Any
+    + addItem(item:Any)
+    + getSize():Int
+}
+
+Iterator <|.. ConcreteIterator
+Aggregate <|.. ConcreteAggregate
+
+Aggregate -left-> Iterator : create
+ConcreteIterator o-right- ConcreteAggregate : 保持
+
+@enduml
