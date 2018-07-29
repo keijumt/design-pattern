@@ -2,13 +2,13 @@ package keijumt.design_pattern.ui
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import keijumt.design_pattern.R
+import keijumt.design_pattern.ui.ui.main.BaseActivity
 import keijumt.design_pattern.ui.ui.main.MainViewModel
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var viewModel: MainViewModel
 
