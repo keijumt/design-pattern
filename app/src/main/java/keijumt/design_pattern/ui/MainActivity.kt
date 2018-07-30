@@ -5,7 +5,9 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import keijumt.design_pattern.R
 import keijumt.design_pattern.ui.ui.main.BaseActivity
+import keijumt.design_pattern.ui.ui.main.MainFragment
 import keijumt.design_pattern.ui.ui.main.MainViewModel
+import keijumt.design_pattern.ui.ui.main.SubFragment
 import java.util.*
 
 class MainActivity : BaseActivity() {
@@ -25,6 +27,18 @@ class MainActivity : BaseActivity() {
 
         viewModel.addObserver(observer)
         viewModel.process()
+
+
+        val mainFragment = MainFragment()
+        val subFragment = SubFragment()
+
+        // ポリモーフィズムを使わない
+        addMainFragment(mainFragment, R.id.container)
+        addSubFragment(subFragment, R.id.container)
+
+        // ポリモーフィズムを使う
+        addFragment(mainFragment, R.id.container)
+        addFragment(subFragment, R.id.container)
     }
 
 }
