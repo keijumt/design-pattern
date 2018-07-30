@@ -1,5 +1,6 @@
 package keijumt.design_pattern.ui.ui.main
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import keijumt.design_pattern.R
 
-class MainFragment : Fragment() {
+class SubFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+                              savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.sub_fragment, container, false)
     }
+
+
 }

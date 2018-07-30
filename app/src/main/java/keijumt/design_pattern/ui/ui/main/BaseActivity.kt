@@ -32,4 +32,17 @@ abstract class BaseActivity : AppCompatActivity() {
                 .add(containerViewId, fragment)
                 .commit()
     }
+
+    /**
+     * SubFragmentを指定のViewに貼り付ける。
+     *
+     * @param fragment 貼り付けるFragment
+     * @param containerViewId コンテナViewのID
+     */
+    fun addSubFragment(fragment: SubFragment, containerViewId: Int) {
+        supportFragmentManager
+                .beginTransaction()
+                .add(containerViewId, fragment)
+                .commit()
+    }
 }
